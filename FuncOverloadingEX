@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+void sum()
+{
+    int a,b,c,d;
+    cout<<"Enter 4 numbers to add\n";
+    cin>>a>>b>>c>>d;
+    cout<<"Sum is\n"<<a+b+c+d<<endl;
+}
+void sum(int a,int b)
+{
+    cout<<"Sum is\n"<<a+b<<endl;
+}
+void sum(int a,int b,int c)
+{
+    cout<<"Sum is\n"<<a+b+c<<endl;
+}
+int main()
+{
+    int a,b,c;
+    cout<<"Enter 2 numbers to add\n";
+    cin>>a>>b;
+    sum(a,b);
+    cout<<"Enter 3 numbers to add\n";
+    cin>>a>>b>>c;
+    sum(a,b,c);
+    sum();
+    return 0;
+}
