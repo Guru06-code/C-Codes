@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+class student
+{
+    public: string name,branch;
+        int sem;
+        float m1,m2,m3;
+    public:
+    void acceptDetails()
+    {
+        cout<<"Enter details\n";
+        cout<<"Enter name\n";
+        cin>>name;
+        cout<<"Enter branch\n";
+        cin>>branch;
+        cout<<"Enter sem\n";
+        cin>>sem;
+        cout<<"Enter marks\n";
+        cin>>m1>>m2>>m3;
+    }
+    float average()
+    {
+        float avg;
+        avg=(m1+m2+m3)/3.0;
+        return avg;
+    }
+    void dispDetails()
+    {
+        cout<<"Details are\n"<<name<<endl<<branch<<endl<<sem<<endl<<m1<<endl<<m2<<endl<<m3<<endl;
+    }
+};
+int main()
+{
+    student s[100];
+    int i,avg;
+    for(i=0;i<100;i++)
+    {
+        s[i].acceptDetails();
+        avg=s[i].average();
+        s[i].dispDetails();
+        cout<<"average is\n"<<avg<<endl;
+    }
+    return 0;
+}
