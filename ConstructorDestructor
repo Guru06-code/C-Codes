@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class student
+{
+    public:string student_name;     //data members
+           string student_branch;
+           int student_sem;
+           float student_SGPA;
+           public:
+           student()    //default constructor
+           {
+               cout<<"Default constructor called\n";
+               student_name="Guruprasad";
+               student_branch="Information science";
+               student_sem=3;
+               student_SGPA=6.88;
+           }
+           student(string sname,string sbranch,int ssem,float sSGPA)    //parameterised constructor
+           {
+               cout<<"parameterised constructor called\n";
+               student_name=sname;
+               student_branch=sbranch;
+               student_sem=ssem;
+               student_SGPA=sSGPA;
+           }
+           student(student &obj)    //copy constructor
+           {
+               cout<<"Copy constructor called\n";   //creating object using another object
+               student_name=obj.student_name;
+               student_branch=obj.student_branch;
+               student_sem=obj.student_sem;
+               student_SGPA=obj.student_SGPA;
+           }
+           void getDetails(string sname,string sbranch,int ssem,float sSGPA)     //member function
+           {
+               student_name=sname;
+               student_branch=sbranch;
+               student_sem=ssem;
+               student_SGPA=sSGPA;
+           }
+           void dispDetails()
+           {
+               cout<<"Student name is "<<student_name<<endl;
+               cout<<"Student branch is "<<student_branch<<endl;
+               cout<<"Student sem is "<<student_sem<<endl;
+               cout<<"Student SGPA is "<<student_SGPA<<endl;
+           }
+           ~student()        //destructor
+           {
+               cout<<"Destructor was called\n";
+           }         //will be called after each constructor
+};
+int main()
+{
+    student s1,s2("Vishal","IS",3,10);
+    s1.getDetails("Guruprasad","IS",3,6.88);
+    s1.dispDetails();
+    s2.dispDetails();
+    student s3=s1;            //using copy constructor
+    s3.dispDetails();
+    return 0;
+}
